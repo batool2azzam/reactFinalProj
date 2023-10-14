@@ -1,0 +1,27 @@
+.compound-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+    width: 100%;
+  }
+  
+  .compound-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    cursor: pointer; 
+    padding-right: 100px;
+  }
+
+.compound-component svg {
+    width: 12px; 
+    height: 12px;
+    fill: #ffffff; 
+  }
+  
+ .compound-item span {
+    font-weight: 100; 
+    font-size: 14px; 
+    color: #ffffff; 
+  }

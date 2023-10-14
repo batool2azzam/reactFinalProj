@@ -1,0 +1,31 @@
+.direct {
+    background-color: black;
+    color: white;
+    height: 100%;
+    display: flex;
+    position: relative;
+
+}
+
+.leftbarDirect {
+    width: 25%;
+    height: 200%;
+    padding: 10px;
+
+}
+
+
+.CenterDirect {
+    width: 20%;
+    height: 200%;
+    margin-left: -180px;
+
+}
+
+.RigthDirect {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    top: 35%;
+    right: 10%;
+}

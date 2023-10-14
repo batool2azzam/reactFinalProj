@@ -1,0 +1,41 @@
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-item {
+  position: relative;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+img{
+  object-fit:cover;
+
+}
+.gallery-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.gallery-caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
+.gallery-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 6px 9px;
+  border-radius: 5px;
+}
+.gallery-icon img {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  border-radius: 50%;
+  object-fit: cover;
+}

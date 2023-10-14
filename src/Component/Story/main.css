@@ -1,0 +1,34 @@
+.story-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.gradient img {
+	width: 64px;
+	height: 64px;
+	border-radius: 100%;
+	object-fit: cover;
+	border: 4px solid rgb(0, 0, 0);
+}
+
+
+.gradient {
+	width: 76px;
+	height: 76px;
+	border-radius: 50%;
+	align-items: center;
+	background-image: linear-gradient(40deg,
+			#ffa95f 5%,
+			#f99c4a 15%,
+			#f47838 30%,
+			#e75157 45%,
+			#d92d7a 70%,
+			#cc2a92 80%,
+			#c32e92 95%);
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}

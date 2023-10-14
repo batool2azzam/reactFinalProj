@@ -1,0 +1,21 @@
+.explore {
+    display: flex;
+    background-color: black;
+    color: white;
+    z-index: -1;
+
+  }
+  
+  .left {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .right {
+
+    width: 48%;
+    padding: 20px;
+    margin-right: 250px;
+  }
+  
+  

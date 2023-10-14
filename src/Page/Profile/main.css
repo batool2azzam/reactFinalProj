@@ -1,0 +1,41 @@
+.profile {
+    display: flex;
+    background-color: black;
+    color: white;
+    z-index: -1;
+  }
+  
+  .left_prof {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .center_prof {
+    flex: 3;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    top: 0;
+    width: 70%;
+    position: relative;
+  }
+  
+  .header {
+    display: block;
+    width: 42%; 
+    margin-bottom: 25px;
+  }
+  .Bio{
+    letter-spacing: 1px;
+  }
+  .ProfIcons {
+    border-top: 1px solid #b5b0b0;
+    width: 72%;
+  }
+  
+  .Gallary {
+    width: 72%; 
+    margin-top: 20px; 
+  }
+  

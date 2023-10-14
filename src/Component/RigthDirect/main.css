@@ -1,0 +1,52 @@
+.direct-right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  gap: 12px;
+
+}
+
+.message-icon {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 50%;
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-icon .icon {
+  font-size: 60px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.p-messages {
+  font-size: 20px;
+}
+
+.p-send {
+  font-size: 18px;
+  color: #828282;
+  text-align: center;
+}
+
+.send-action {
+  background-color: #0095f6;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-action:hover {
+  background-color: #0082e6;
+
+}

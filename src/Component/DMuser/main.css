@@ -1,0 +1,39 @@
+.dm-user {
+    display: flex;
+    align-items: center;
+    
+}
+
+.dm-user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+
+}
+.dm-userName-content{
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+.dm-user h4 {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.dm-user p {
+    margin-top: 8px;
+    color: #9b9595;
+    margin-left: 0px;
+    font-size: 16px;
+
+}
+
+.date {
+    color: #006bb6;
+    position: relative;
+    right: 0;
+}

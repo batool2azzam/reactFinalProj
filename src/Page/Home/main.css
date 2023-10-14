@@ -1,0 +1,25 @@
+.homee {
+
+    background-color: black;
+    color: white;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.left-home {
+    width: 25%;
+    height: 200%;
+    padding: 10px;
+}
+
+.center-home {
+    width: 40%;
+    height: 100%;
+}
+
+.rigth-home {
+    width: 30%;
+    height: 200%;
+}

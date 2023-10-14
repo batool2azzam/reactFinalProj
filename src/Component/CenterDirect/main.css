@@ -1,0 +1,62 @@
+
+.rightDirect {
+    margin: 30px;
+    position: fixed;
+    width: 25%;
+    height: 100%;
+    z-index: 0;
+    border-right: 1px solid rgb(35, 34, 34);
+}
+
+.top{
+  padding: 32px 32px 8px  ;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-bottom: 1px solid rgba(29, 27, 27, 0.752);
+}
+
+.top-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: -50px;
+}
+
+.direct-interactions{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 8px;
+}
+
+.user-name-account{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:8px
+}
+.create-message-icon{
+    font-size: 25px;
+}
+
+.account-icon{
+    font-size: 12px;
+
+}
+
+.direct-interactions p{
+    font-size: 16px;
+    font-weight:600 ;
+    color: rgb(160, 156, 156);
+}
+
+.direct-interactions p:last-child{
+  
+    color: rgb(37, 126, 249);
+}
+.messages{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
