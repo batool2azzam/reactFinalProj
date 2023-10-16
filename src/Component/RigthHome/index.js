@@ -11,7 +11,7 @@ import l6 from "../../assest/Avatars/steward.png"
 import ThemeContext from '../../ThemeContext';
 import { useContext } from 'react'
 export default function Index() {
-    const { Theme, selectedTheme, setSelectedTheme } = useContext(ThemeContext);
+    const { Theme } = useContext(ThemeContext);
     return (
         <div className="rightHome">
             <User />

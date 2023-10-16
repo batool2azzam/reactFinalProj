@@ -15,9 +15,6 @@ export const ThemeContextProvider = ({ children }) => {
     eigth: "#fff",
     nine: "white"
 
-
-
-
   }
 
   const lightMode = {
@@ -30,13 +27,12 @@ export const ThemeContextProvider = ({ children }) => {
   }
   const [Theme, setTheme] = useState(darkMode);
   useEffect(() => {
-    if (selectedTheme == "dark") {
+    if (selectedTheme === "dark") {
       setTheme(darkMode);
     }
 
     else {
       setTheme(lightMode);
-
     }
   }, [selectedTheme])
 

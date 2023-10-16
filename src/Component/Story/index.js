@@ -3,7 +3,7 @@ import './main.css'
 import { useContext } from 'react'
 import ThemeContext from '../../ThemeContext';
 const Story = ({ props }) => {
-  const { Theme, selectedTheme, setSelectedTheme } = useContext(ThemeContext);
+  const { Theme } = useContext(ThemeContext);
 
   return (
     <div className='story-item'>

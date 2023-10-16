@@ -1,4 +1,3 @@
-/* main.css */
 .modal {
     position: fixed;
     top: 0;
@@ -15,7 +14,7 @@
   }
   
   .modal-content {
-    background-color: #1D1D1D;
+    background-color: #302e2e;
     color: white;
     border-radius: 8px;
     padding: 50px;

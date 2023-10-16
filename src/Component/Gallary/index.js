@@ -1,7 +1,7 @@
 import React from "react";
-import postsData from "../ExplorData"; // Import postsData
-import GalleryItem from "../GalleryItem"; // Import GalleryItem
-import "./main.css"; // Import the CSS file
+import postsData from "../ExplorData"; 
+import GalleryItem from "../GalleryItem"; 
+import "./main.css"; 
 
 function Gallery() {
   return (

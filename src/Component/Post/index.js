@@ -1,27 +1,133 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Avatar } from "@mui/material";
 import "./main.css";
-import ThemeContext from '../../ThemeContext';
-import { useContext } from 'react'
+import ThemeContext from "../../ThemeContext";
+import CreditScoreIcon from '@mui/icons-material/CreditScore';
+import RestoreFromTrashIcon from '@mui/icons-material/RestoreFromTrash';
+import axios from "axios";
+
 const Post = ({ props }) => {
-  const { userName, profileImage, postImage, likes, caption } = props;
-  const { Theme, selectedTheme, setSelectedTheme } = useContext(ThemeContext);
+  const { user, image, likes, description, id ,createdAt} = props;
+  const { avatar, userName } = user;
+  const { Theme } = useContext(ThemeContext);
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [posts, setPosts] = useState([]);
+  const token = localStorage.getItem("token");
+
+  const [deleted, setDeleted] = useState(false);
+  const [updated, setUpdated] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("http://16.170.173.197/posts", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setPosts(response.data.posts);
+      })
+      .catch((error) => {
+        console.log("Error Fetching posts", error);
+      });
+  }, [token]);
+
+  const handleDropdownOpen = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleDeletePost = () => {
+    axios
+      .delete(`http://16.170.173.197/posts/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(() => {
+        const updatedPosts = posts.filter((post) => post.id !== id);
+        setPosts(updatedPosts);
+        setDeleted(true);
+      })
+      .catch((error) => {
+        console.error("Error deleting post:", error);
+      });
+  };
+
+  const handleEditPost = () => {
+    const newDescription = prompt("Please add the new description");
+
+    axios
+      .put(`http://16.170.173.197/posts/${id}`, { description: newDescription }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        setUpdated(true);
+      })
+      .catch((error) => {
+        console.error("Error editing post:", error);
+      });
+  };
+
+  useEffect(() => {
+    if (deleted) {
+      console.log("Post deleted successfully");
+    }
+    if (updated) {
+      console.log("Post updated successfully");
+    }
+  }, [deleted, updated]);
+
+  if (deleted ) {
+    return null; 
+  }
+  function NearestTime(createdAt) {
+    const now = new Date();
+    const created = new Date(createdAt);
+    const diff = now - created;
+  
+    if (diff < 3600000) {
+      return `${Math.floor(diff / 60000)} m`;
+    } else if (diff < 86400000) {
+      return `${Math.floor(diff / 3600000)} h`;
+    } else if (diff < 604800000) {
+      return `${Math.floor(diff / 86400000)} d`;
+    } else {
+      return `${Math.floor(diff / 604800000)} w`;
+    }
+  }
+  
   return (
     <div className="post linne">
       <div className="post__header">
         <div className="post__headerAuthor">
-          <Avatar style={{ marginRight: "10px" }} src={profileImage}></Avatar>{" "}
-          <div className="usernamee">{userName}</div> • <span>2h</span>
+          <Avatar style={{ marginRight: "10px" }} src={avatar}></Avatar>{" "}
+          <div className="usernamee">{userName}</div> • <span>{NearestTime(createdAt)}</span>
         </div>
 
-        <MoreHorizIcon />
+        <MoreHorizIcon onClick={handleDropdownOpen} />
+        {isDropdownOpen && (
+          <div className="dropdown">
+            <button onClick={handleDeletePost}>
+            <RestoreFromTrashIcon />
+              <p>Delete</p>
+            </button>
+            <button onClick={handleEditPost}>
+            <CreditScoreIcon />
+              <p>Edit</p>
+            </button>
+          </div>
+        )}
       </div>
       <div className="post__image">
-        <img src={postImage} alt="" />
+        <img src={image} alt="postImage" />
       </div>
       <div className="post__footer">
-        <div className="post__footerIcons">
+      <div className="post__footerIcons">
           <div className="post__iconsMain">
             <svg
               className="postIcon"
@@ -92,16 +198,17 @@ const Post = ({ props }) => {
             </svg>
           </div>
         </div>
-        <b>{likes} likes</b>
+        <b>{likes.length} likes</b>
         <br />
         <br />
         <b>{userName}</b>
         <br />
         <br />
-        {caption}
+        {description}
       </div>
     </div>
   );
 };
 
 export default Post;
+

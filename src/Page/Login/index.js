@@ -10,6 +10,7 @@ function Login() {
   });
 
   const navigate = useNavigate();
+  
 
   const handelLogin = e => {
     e.preventDefault();
@@ -18,6 +19,8 @@ function Login() {
       .post('http://16.170.173.197/users/login', userData)
       .then(response => {
         const token = response.data.token;
+        const id=response.data.user.id;
+        localStorage.setItem("id",id)
         localStorage.setItem("token", token)
         console.log(userData)
         navigate('/home');

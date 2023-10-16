@@ -3,7 +3,7 @@ import "./main.css";
 import Leftbar from "../../Component/LeftBar";
 import Bio from "../../Component/Bio";
 import ProfIcons from "../../Component/ProfIcons";
-import Gallary from "../../Component/Gallary";
+import GallaryProfile from "../../Component/GallaryProfile";
 import ThemeContext from '../../ThemeContext';
 import { useContext } from 'react'
 
@@ -26,7 +26,7 @@ export const Index = () => {
           <ProfIcons />
         </div>
         <div className="Gallary">
-          <Gallary />
+          <GallaryProfile />
         </div>
       </div>
     </div>

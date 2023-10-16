@@ -9,7 +9,7 @@ import Direct from "./Page/Direct";
 import Explore from "./Page/Explore";
 import Authenticate from "./Page/Authenticate";
 import ProtectedAuth from "./ProtectedAuth";
-import ProtectedHome from "./ProtectedHome";
+import ProtectedPage from "./ProtectedPage";
 import { ThemeContextProvider } from './ThemeContext';
 
 
@@ -24,10 +24,10 @@ function App() {
             <Route path="/" element={<ProtectedAuth><Authenticate /></ProtectedAuth>} />
             <Route path="/signup" element={<ProtectedAuth><SignUp /></ProtectedAuth>} />
             <Route path="/login" element={<ProtectedAuth><Login /></ProtectedAuth>} />
-            <Route path="/home" element={<ProtectedHome><Home /></ProtectedHome>} />
-            <Route path="/profile" element={<ProtectedHome><Profile /></ProtectedHome>} />
-            <Route path="/explore" element={<ProtectedHome><Explore /></ProtectedHome>} />
-            <Route path="/direct" element={<ProtectedHome><Direct /></ProtectedHome>} />
+            <Route path="/home" element={<ProtectedPage><Home /></ProtectedPage>} />
+            <Route path="/profile" element={<ProtectedPage><Profile /></ProtectedPage>} />
+            <Route path="/explore" element={<ProtectedPage><Explore /></ProtectedPage>} />
+            <Route path="/direct" element={<ProtectedPage><Direct /></ProtectedPage>} />
           </Routes>
         </BrowserRouter>
       </ThemeContextProvider>

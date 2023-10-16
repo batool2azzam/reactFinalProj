@@ -2,6 +2,7 @@
     width: 620px;
     margin: 30px 40px 50px 40px;
     font-family: 'Rubik', sans-serif;
+    position: relative;
   }
  
   .post__header {
@@ -57,3 +58,40 @@
   .postIcon :hover {
     cursor: pointer;
   }
+  .dropdown {
+    position: absolute;
+    background-color: rgb(212, 204, 204);
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(255, 252, 252, 0.2);
+    padding: 10px 14px;
+    z-index: 1;
+    right: 0;
+    top: 33px;
+    border-radius: 10%;
+  }
+  .dropdown p{
+    display: inline;
+    font-size: larger;
+    padding-left: 3px;
+  }
+  .dropdown svg{
+    margin-bottom: -3px;
+  }
+  .dropdown button {
+    background-color: transparent;
+    border-radius: 10%;
+    color: black;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .dropdown button:hover {
+    background-color: #f1f1f1;
+  }
+  
